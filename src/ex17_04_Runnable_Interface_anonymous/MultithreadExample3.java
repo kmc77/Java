@@ -1,7 +1,7 @@
 package ex17_04_Runnable_Interface_anonymous;
 
 //Runnable인터페이스를 이용한 멀티스레드 프로그램
-public class MultithreadExample3 {
+class MultithreadExample3 {
 
 	public static void main(String[] args) {
 		// Runnable인터페이스를 구현하는 클래스의 객체를 생성해서 Thread 생성자의 파라미터로 사용합니다.
