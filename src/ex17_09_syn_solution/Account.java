@@ -1,5 +1,5 @@
 
-package ex17_08_syn_problem;
+package ex17_09_syn_solution;
 
 //은행 계좌 클래스
 class Account {
