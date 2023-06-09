@@ -8,7 +8,7 @@ class MultithreadExample3_Test {
 	public static void main(String[] args) {
 
 		while (true) {
-			Date d = new Date();
+			Date d = new Date(); //오늘 시스템 날짜와 시간
 
 			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy년 MM월 dd일 E요일 a HH시 mm분 ss초 ");
 			String t = sdf1.format(d);
