@@ -19,5 +19,8 @@ class CalcThread extends Thread {
 
 		// 계산 결과를 공유 영역에 저장
 		sharedArea.setResult(total * 4);
+		
+		//SharedArea 객체의 isReady 필드 값을 true로 설정
+		sharedArea.setReady(true);
 	}
 }

@@ -10,7 +10,12 @@ class PrintThread extends Thread {
 	}
 
 	public void run() {
-		System.out.println("공유 영역의 데이터 = " + sharedArea.getResult()); // 공유 영역의 데이터 출력합니다.
-	}
+		// SharedArea객체의 isReady 필드 값이 true될때 까지 반복한다.
+		while (sharedArea.isReady() != true) {
+			System.out.println("실행중 ~");
+		}
 
-}
+		// 공유 영역의 데이터를 출력
+		System.out.println("공유 영역의 데이터 = " + sharedArea.getResult()); 
+	}// run end
+}// class end
