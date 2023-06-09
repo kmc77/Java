@@ -22,4 +22,9 @@ class Account {
 	public void setAccountNo(String accountNo) {
 		this.accountNo = accountNo;
 	}
+
+	public int getBalance() {
+		
+		return 0;
+	}
 }
