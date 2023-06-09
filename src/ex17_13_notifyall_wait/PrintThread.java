@@ -10,11 +10,10 @@ class PrintThread extends Thread {
 	}
 
 	public void run() {
-		if (sharedArea.isReady() != true) { //파이가 계산 중인 경우
-			/* 이전의 방식 - 파이 계산이 끝날때 까지 계속 체크해야 했습니다.
-			 * while (SharedArea.isReady != true) {
-			 		Sjystem.out.println("실행중 ~");
-			 		}
+		if (sharedArea.isReady() != true) { // 파이가 계산 중인 경우
+			/*
+			 * 이전의 방식 - 파이 계산이 끝날때 까지 계속 체크해야 했습니다. while (SharedArea.isReady != true) {
+			 * Sjystem.out.println("실행중 ~"); }
 			 */
 			try {
 				synchronized (sharedArea) {
@@ -28,6 +27,6 @@ class PrintThread extends Thread {
 		} // if end
 
 		// 공유 영역의 데이터를 출력
-		System.out.println(sharedArea.getResult());
+		System.out.println("PrintThread: " + sharedArea.getResult());
 	}
 }

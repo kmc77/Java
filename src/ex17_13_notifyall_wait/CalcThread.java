@@ -23,8 +23,8 @@ class CalcThread extends Thread {
 		sharedArea.setReady(true); 
 		
 		synchronized (sharedArea) {
-			sharedArea.notifyAll(); //기다리고 있는 모든 스레드로 신호를 보냅니다.
-			//sharedArea.notify(); //wait중인 스레드 중 하나에게만 신호가 보내집니다.
+			//sharedArea.notifyAll(); //기다리고 있는 모든 스레드로 신호를 보냅니다.
+			sharedArea.notify(); //wait중인 스레드 중 하나에게만 신호가 보내집니다.
 		}
 		
 	}

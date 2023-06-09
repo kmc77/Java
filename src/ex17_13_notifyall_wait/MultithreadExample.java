@@ -1,6 +1,6 @@
 package ex17_13_notifyall_wait;
 
-//notify메서드 사용 예
+//notifyAll메서드 사용 예
 public class MultithreadExample {
 
 	public static void main(String[] args) {
