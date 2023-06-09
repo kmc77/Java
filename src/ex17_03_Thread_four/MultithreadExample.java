@@ -1,9 +1,19 @@
 package ex17_03_Thread_four;
 
-public class MultithreadExample {
+//네 개의 스레드로 실행되는 멀티스레드 프로그램
+//main, thread1, thread2, thread3
+import ex17_02_Thread_sleep.DigitThread;
+
+class MultithreadExample {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// 세 개의 스레드를 생성해서 시작합니다.
+		Thread thread1 = new DigitThread();
+		Thread thread2 = new DigitThread();
+		Thread thread3 = new AlphabetThread();
+		thread1.start();
+		thread2.start();
+		thread3.start();
 
 	}
 
