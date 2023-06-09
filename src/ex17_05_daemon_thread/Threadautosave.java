@@ -25,7 +25,7 @@ class Threadautosave implements Runnable {
 	public void run() {
 		while (true) {
 			try {
-				Thread.sleep(3 * 1000);
+				Thread.sleep(3 * 1000); //3초마다
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
