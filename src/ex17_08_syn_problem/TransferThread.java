@@ -14,8 +14,8 @@ class TransferThread extends Thread {
 			sharedArea.getAccount1().withdraw(1000000);
 			System.out.print("이몽룡 계좌: 100만원 인출, ");
 
-			sharedArea.getAccount2().deposet(1000000);
-			System.out.print("성춘향 계좌: 100만원 입금, ");
+			sharedArea.getAccount2().deposit(1000000);
+			System.out.println("성춘향 계좌: 100만원 입금, ");
 		}// for end
 	}// run den
 }// class end
