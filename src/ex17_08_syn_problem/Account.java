@@ -27,4 +27,14 @@ class Account {
 		
 		return 0;
 	}
+
+	public void withdraw(int i) {
+		 
+		
+	}
+
+	public void deposet(int i) {
+		 
+		
+	}
 }
