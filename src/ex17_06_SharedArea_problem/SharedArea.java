@@ -9,12 +9,12 @@ class SharedArea {
 
 	}
 
-	static void getter() {
-
+	public double getResult() {
+		return result;
 	}
 
-	static void setter() {
-
+	public void setResult(double result) {
+		this.result = result;
 	}
 
 }
