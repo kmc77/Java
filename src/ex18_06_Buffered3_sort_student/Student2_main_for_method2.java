@@ -6,16 +6,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
-public class BufferedReaderExample2_readLine {
+public class Student2_main_for_method2 {
 
 	public static void main(String[] args) {
-		input();
-		
+		ArrayList<Student2> list = new ArrayList<Student2>();
+		input(list);
+		print(list);
+
 	}
 
-	static void input() {
-		ArrayList<Student2> list = new ArrayList<Student2>();
+	static void input(ArrayList<Student2> list) {
+
 		BufferedReader reader = null;
 
 		try {
@@ -30,8 +31,6 @@ public class BufferedReaderExample2_readLine {
 						Integer.parseInt(sep[3])));
 				System.out.println(str);
 			}
-
-			print(list);
 
 		} catch (FileNotFoundException fnfe) { // Exception - IOException
 			System.out.println("파일이 존재하지 않습니다.");
@@ -60,7 +59,7 @@ public class BufferedReaderExample2_readLine {
 		System.out.print(Student2.korTotal + "\t");
 		System.out.print(Student2.mathTotal + "\t");
 		System.out.print(Student2.engTotal + "\t");
-		
+
 	}
 
 }
