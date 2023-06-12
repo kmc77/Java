@@ -28,8 +28,8 @@ public class BufferedWriterExample3 {
 					System.out.println("파일로 출력할 수 없습니다.");
 				} finally {
 					try {
-						bw.close(); //보조 기반 스트림이 정상적으로 닫힐 때
-									//자동으로 flush() 메서드를 호출합니다.
+						bw.close(); // 보조 기반 스트림이 정상적으로 닫힐 때
+									// 자동으로 flush() 메서드를 호출합니다.
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
 					}
