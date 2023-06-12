@@ -3,8 +3,6 @@ package ex18_10_File;
 import java.io.*;
 import java.util.GregorianCalendar;
 
-import javax.management.monitor.MonitorSettingException;
-
 /*
  현재 디렉토리의 서브디렉토리와 파일 목록을 출력하는 프로그램
  File 클래스 : 파일 관리 기능을 갖는 클래스
