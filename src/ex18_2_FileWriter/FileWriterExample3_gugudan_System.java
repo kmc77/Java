@@ -8,13 +8,13 @@ public class FileWriterExample3_gugudan_System {
 
 		// 단 title출력
 		for (int dan = 2; dan <= 9; dan++) {
-			System.out.println("[" + dan + "단]" + "\t");
+			System.out.print("[" + dan + "단]" + "\t");
 		}
 
 		for (int i = 1; i <= 9; i++) {
 			System.out.println();
 			for (int j = 2; j <= 9; j++) {
-				System.out.println(j + "*" + i + "=" + (j * i) + "\t");
+				System.out.print(j + "*" + i + "=" + (j * i) + "\t");
 			}
 		}
 	}
