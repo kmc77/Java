@@ -6,12 +6,20 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Student2_main_for_method2 {
+public class Student2_main_for_method3 {
 
 	public static void main(String[] args) {
 		ArrayList<Student2> list = new ArrayList<Student2>();
 		input(list);
 		print(list);
+		
+		sort(list);
+		print(list);
+
+	}
+
+	private static void sort(ArrayList<Student2> list) {
+		Student2.sort(list);
 
 	}
 
@@ -57,7 +65,7 @@ public class Student2_main_for_method2 {
 		System.out.print("\n총점\t");
 		System.out.print(Student2.korTotal + "\t");
 		System.out.print(Student2.mathTotal + "\t");
-		System.out.print(Student2.engTotal + "\t");
+		System.out.print(Student2.engTotal + "\t\n");
 
 	}
 
