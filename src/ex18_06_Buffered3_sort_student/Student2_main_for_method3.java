@@ -12,7 +12,7 @@ public class Student2_main_for_method3 {
 		ArrayList<Student2> list = new ArrayList<Student2>();
 		input(list);
 		print(list);
-		
+
 		sort(list);
 		print(list);
 
