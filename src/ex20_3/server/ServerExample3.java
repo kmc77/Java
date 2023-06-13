@@ -38,11 +38,6 @@ class ServerExample3 {
 			 }
 			 */
 			try {
-				socket.close(); // 소켓을 닫습니다.
-			} catch (Exception ignored) {
-				System.out.println("소켓 닫는 중 에러입니다.");
-			}
-			try {
 				serverSocket.close(); // 서버 소켓을 닫습니다.
 			} catch (Exception ignored) {
 				System.out.println("서버 소켓 닫는 중 에러입니다.");

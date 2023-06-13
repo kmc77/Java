@@ -20,5 +20,4 @@ public class ClientExample3 {
 		}
 		//socket 닫으면 안됩니다.
 	}
-
 }
