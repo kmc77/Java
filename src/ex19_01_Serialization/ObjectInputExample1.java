@@ -36,11 +36,11 @@ public class ObjectInputExample1 {
 				int date = calendar.get(Calendar.DATE);
 				System.out.println(year + "/" + month + "/" + date);
 			}
-			
+
 		} catch (FileNotFoundException fnfe) {
 			System.out.println("파일을 존재하지 않습니다..");
-		} catch (EOFException eofe) { //파일로부터 더이상 읽을 객체가 없을 때 발생하는 익셉션 처리합니다.
-			System.out.println("끝");	
+		} catch (EOFException eofe) { // 파일로부터 더이상 읽을 객체가 없을 때 발생하는 익셉션 처리합니다.
+			System.out.println("끝");
 		} catch (IOException ioe) {
 			System.out.println("파일을 읽을 수 없습니다.");
 		} catch (ClassNotFoundException cnfe) {
