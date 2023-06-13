@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
  	프로그램에 입력된 스트림으로 부터 다시 객체를 만들어 내는 작업을 역직렬화(deserialization)라고 합니다.
  */
 
-public class ObjectInputExample1 {
+public class ObjectInputExample_before {
 
 	public static void main(String[] args) {
 		/*
@@ -36,15 +36,23 @@ public class ObjectInputExample1 {
 			}
 
 		} catch (IOException ioe) {
-			System.out.println("끝");
+			ioe.printStackTrace(); // java.io.IOFException 발생합니다.
+			System.out.println("파일을 읽을 수 없습니다.");
+			/*
+			 java.lang.Object
+			 	java.lang.Throwable
+			 		java.lang.Exception 
+			 			java.io.IOException 
+			 				java.io.EOFException 
+			 */
+			
 		} catch (ClassNotFoundException e) {
-
-			e.printStackTrace();
+			System.out.println("해당 클래스가 존재하지 않습니다.");
 		} finally {
 			try {
 				in.close(); // 3. 파일을 닫습니다.
 			} catch (Exception e) {
-				System.out.println("파일을 닫는 중 오류 발생했습니다.");
+				System.out.println("파일을 닫는 중 오류입니다.");
 			}
 		}
 
