@@ -43,7 +43,7 @@ class JDBCExample2_Oracle1_column_name_emp {
 			 rs.next() - 다음 행 위치로 이동하는 메서드
 			 			 리턴값은 boolean으로 실제로 행을 읽어 왔는지 여부입니다.
 			 */
-			int i = 1;
+			int i = 0;
 			while (rs.next()) { // 더 이상 읽을 데이터가 없을 때까지 반복
 				
 				int empno = rs.getInt("empno"); //the column value; if the value is SQL NULL,
@@ -63,7 +63,7 @@ class JDBCExample2_Oracle1_column_name_emp {
 
 				System.out.printf(
 						"%3d\t%5d\t%-8s%-10s\t%-5d\t%-15s%7d%7d%5d\n",
-						i++, empno, ename, job, mgr, hiredate, sal, comm, deptno);
+						++i, empno, ename, job, mgr, hiredate, sal, comm, deptno);
 			}
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());

@@ -50,7 +50,7 @@ class JDBCExample2_Oracle1_column_name_goodsinfo {
 
 				System.out.printf(
 						"%d\t%-7s\t%-10s\t%d\t%-5s\n",
-						i++, code, name, price, maker);
+						++i, code, name, price, maker);
 			}
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
