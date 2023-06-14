@@ -26,11 +26,10 @@ class ServerExample2 {
 			 */
 			BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			/*
-			 PrintWriter 클래스를 이용하여 문자 스트림을 바이트 스트림으로 바꾸어서
-			 출력하기 위해서는 이 클래스의 생성자에 OutputStream 타입의 객체를 파라미터로
-			 넘겨주어야 합니다.
+			 * PrintWriter 클래스를 이용하여 문자 스트림을 바이트 스트림으로 바꾸어서 출력하기 위해서는 이 클래스의 생성자에
+			 * OutputStream 타입의 객체를 파라미터로 넘겨주어야 합니다.
 			 */
-			
+
 			PrintWriter writer = new PrintWriter(socket.getOutputStream());
 
 			// 데이터를 수신합니다.
