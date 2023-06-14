@@ -1,10 +1,15 @@
 package ex21_2_select_statement;
-//데이터베이스의 테이블 내용을  where 절로 읽는 프로그램
+//데이터베이스의 테이블로부터 조건에 맞는 데이터를 입력받아 처리하는 프로그램
+//arguments탭에 "디지털 TV" 라고 입력하세요
 import java.sql.*;
 
-class JDBCExample3_Oracle1_where {
+class JDBCExample3_Oracle2_where_input {
 
 	public static void main(String[] args) {
+		if (args.length != 1) {
+			System.out.println("상품명 입력하세요");
+			return;
+		}
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -13,13 +18,13 @@ class JDBCExample3_Oracle1_where {
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(url, "scott", "tiger");
 			stmt = conn.createStatement();
+			
 			String sel_where_sql
 			= "select code, name, price, maker "
 			+ "from goodsinfo " 
-			+ "where name = '디지털 TV'";		
+			+ "where name = '" + args[0] + "'";		
 			
 			System.out.println(sel_where_sql + "\n");
-			
 			rs = stmt.executeQuery(sel_where_sql);
 			
 			System.out.println("번호\t상품코드\t상품명\t\t가격\t제조사");
