@@ -15,7 +15,7 @@ public class ClientExample {
 			System.out.println("나의 대화명은 " + args[0] + "입니다.");
 			System.out.println("==============================");
 			//서버와 연결을 맺습니다.
-			Socket socket = new Socket("192.168.0.6", 9002);
+			Socket socket = new Socket("192.0.0.1", 9002);
 			
 			//메시지 송신 스레드 생성
 			Thread thread1 = new SenderThread(socket, args[0]);
