@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DAO {
+public class DAO2 {
 
 	public List<Map<String, Object>> select() {
 		Connection conn = null;
@@ -39,12 +39,10 @@ public class DAO {
 			rs = stmt.executeQuery(select_sql);
 
 			while (rs.next()) { // 더 이상 읽을 데이터가 없을 때까지 반복
-
 				Map<String, Object> h = new HashMap<String, Object>();
-
-				h.put("sal", rs.getInt("sal"));
-				h.put("cnt", rs.getInt("cnt"));
-				h.put("deptno", rs.getInt("deptno"));
+				h.put("deptno", rs.getInt(1));
+				h.put("cnt", rs.getInt(2));
+				h.put("sal", rs.getInt(3));
 				list.add(h);
 			}
 		} catch (ClassNotFoundException cnfe) {
