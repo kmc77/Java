@@ -32,4 +32,14 @@ insert into goodsinfo
  
  select * from dept;
  
+ 
+ select deptno, max(sal), count(ename)
+ from emp
+ group by deptno;
+ 
+ 
+
+
+ 
+ 
 	
