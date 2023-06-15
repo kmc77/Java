@@ -1,4 +1,4 @@
-package ex21_3_select_statement_method_list;
+package ex21_2_select_statement_method_list;
 
 public class GoodsInfo {
 
