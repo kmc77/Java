@@ -23,14 +23,18 @@ class JDBCExample5_Oracle_delete {
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(url, "scott", "tiger");
 			stmt = conn.createStatement();
+			
+			
+			//delete from goodsinfo where code = 'args[0]의 값'
 			String single = "'";
 			
-			String delete_sql	=" delete goodsinfo "
-						+ " where code =" + single + args[0] + single;
+			String del_sql	="delete from goodsinfo "
+						+ "where code = " + single + args[0] + single;
+			System.out.println(del_sql);
 			
-			System.out.println(delete_sql);
-			int rowNum = stmt.executeUpdate(delete_sql);
+			int rowNum = stmt.executeUpdate(del_sql);
 				System.out.println(rowNum + "행이 삭제 되었습니다.");
+				
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
 		} catch (SQLException se) {
