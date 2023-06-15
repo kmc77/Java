@@ -1,16 +1,18 @@
 package ex21_3_insert_delete_update;
-//데이터베이스의 데이블에 데이터를 추가하는 프로그램
-//executeUpdate 메서드 사용
+//데이터베이스의 데이블에 데이터를 삭제하는 프로그램
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class JDBCExample4_Oracle_insert_Test {
+class JDBCExample5_Oracle_delete {
 
 	public static void main(String[] args) {
-		if (args.length != 2) {
-			System.out.println("상품코드, 제조사 입력하세요");
+		
+		
+		if (args.length != 1) { //A2000
+			System.out.println("상품코드를 입력하세요");
 			return;
 		}
 		Connection conn = null;
@@ -23,13 +25,12 @@ class JDBCExample4_Oracle_insert_Test {
 			stmt = conn.createStatement();
 			String single = "'";
 			
-			String up_sql	=" update goodsinfo "
-						+  " set maker=" + single + args[1] + single
+			String delete_sql	=" delete goodsinfo "
 						+ " where code =" + single + args[0] + single;
 			
-			System.out.println(up_sql);
-			int rowNum = stmt.executeUpdate(up_sql);
-				System.out.println(rowNum + "행이 수정 되었습니다.");
+			System.out.println(delete_sql);
+			int rowNum = stmt.executeUpdate(delete_sql);
+				System.out.println(rowNum + "행이 삭제 되었습니다.");
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
 		} catch (SQLException se) {
