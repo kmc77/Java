@@ -34,7 +34,8 @@ insert into goodsinfo
  select * from dept;
  
  
-
+insert into goodsinfo 
+VALUES(A2000, '모니터', 200, '삼성');
  
 
 
