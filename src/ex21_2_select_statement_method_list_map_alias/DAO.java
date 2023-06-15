@@ -33,7 +33,8 @@ public class DAO {
 			stmt = conn.createStatement();
 
 			String select_sql = "select deptno, count(*) cnt, max(sal) sal "
-								+"from emp "
+								+ "from emp "
+								//+ "where deptno = 40" //조회된 결과가 없습니다 출력
 								+ "group by deptno";
 
 			rs = stmt.executeQuery(select_sql);
