@@ -28,15 +28,13 @@ insert into goodsinfo
  insert into goodsinfo 
  VALUES(10005, '벽걸이 에어컨', 400000, '삼성');
  
+ 
  select * from goodsinfo;
  
  select * from dept;
  
  
- select deptno, max(sal), count(ename)
- from emp
- group by deptno;
- 
+
  
 
 
