@@ -6,7 +6,8 @@ import java.util.Scanner;
 //import ex21_2_select_statement_method_list_map_alias.DAO;
 import ex21_4_select_statement_Test.Emp;
 
-//조회할 컬럼 선택과 해당 컬럼 값 입력 후 조회 결과 출력하는 프로그램
+//조회할 컬럼 값을 여러개 입력 후 조회하는 프로그램
+//end 조건으로 처리
 public class CRUD3_search {
 		// CRUD:컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능
 		// C(Create-insert), R(Read-select)
@@ -43,7 +44,7 @@ public class CRUD3_search {
 				System.out.println(++i + "." + m);
 			}
 			
-			System.out.println("조회할 컬럼을 선택하세요>");
+			System.out.print("조회할 컬럼을 선택하세요>");
 			return inputNumber(sc);
 		}
 		
@@ -57,7 +58,7 @@ public class CRUD3_search {
 		
 		private static String searchData(Scanner sc, int menu) {
 			System.out.println("조회할 " + menus[menu -1] + "를(을) 입력하세요>");
-			return sc.nextLine();
+			return sc.next();
 		}
 
 		private static int inputNumber(Scanner sc) {
