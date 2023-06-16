@@ -9,7 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import ex21_4_select_statement_Test.Emp;
+
+import ex21_3_select_statement_emp.Emp;
 
 public class DAO {
 

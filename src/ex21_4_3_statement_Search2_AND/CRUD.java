@@ -3,8 +3,6 @@ package ex21_4_3_statement_Search2_AND;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//import ex21_2_select_statement_method_list_map_alias.DAO;
-//import ex21_4_select_statement_Test.Emp;
 
 //조회할 컬럼 선택과 해당 컬럼 값 입력 후 조회 결과 출력하는 프로그램
 public class CRUD {

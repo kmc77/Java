@@ -1,13 +1,14 @@
-package ex21_4_2_statement_Search;
+package ex21_4_3_statement_Search3_LIKE;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import ex21_3_select_statement_emp.Emp;
 
+
 //조회할 컬럼 값을 여러개 입력 후 조회하는 프로그램
 //end 조건으로 처리
-public class CRUD3_search {
+public class CRUD {
 		// CRUD:컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능
 		// C(Create-insert), R(Read-select)
 		// U(Update-update), D(Delete-delete)

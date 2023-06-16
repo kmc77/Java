@@ -9,18 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-//import ex21_4_select_statement_Test.Emp;
 
 public class DAO {
 
 	public ArrayList<Emp> search(String[] searchs) {
-		 ArrayList<Emp> list = new ArrayList<Emp>();
+		ArrayList<Emp> list = new ArrayList<Emp>();
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String column_name[] = {"empno", "ename", "job", "mgr", "hiredate", "sal", "comm", "deptno"};
+		String column_name[] = { "empno", "ename", "job", "mgr", "hiredate", "sal", "comm", "deptno" };
 		String sql = " select * from emp ";
-		
+
 		// empno, mgr, sal, comm, deptno는 '없어도 됨
 		for (int i = 0; i < searchs.length; i++) {
 			if (searchs[i] != null) {
@@ -28,7 +27,7 @@ public class DAO {
 				if (i == 1 || i == 2 || i == 4) // ename, job, hiredate는 ' 필요
 					single = "'";
 
-				if (sql.contains("where"))
+				if (sql.contains("where")) //where이 포함되어 있는지 확인
 					sql += " and ";
 				else
 					sql += "where ";
@@ -93,3 +92,29 @@ public class DAO {
 	}
 
 }
+
+
+/*
+ 
+ 설명)
+search배열은 String search[] = new String[8]; 선언합니다.
+각 요소에는 조건에 해당하는 값을 넣을 예정입니다.
+
+인덱스      0      1       2     3      4       5      6      7
+  컬럼   사원번호  사원이름  직급   매니저   입사일자  급여    커미션   부서번호    
+ 값       null    null   null  null    null    null   null   null
+  
+  
+ 예로 사원이름을  SCOTT이라고 입력하면 
+인덱스      0      1       2      3      4       5     6     7
+  컬럼   사원번호  사원이름  직급   매니저   입사일자  급여    커미션   부서번호   
+  값      null  SCOTT   null   null    null    null   null   null
+  
+그리고 부서번호를 10을 입력하면
+인덱스      0      1       2      3      4       5     6     7
+  컬럼   사원번호  사원이름  직급   매니저   입사일자  급여    커미션   부서번호    
+  값       null  SCOTT   null   null    null    null   null   10
+  */
+ 
+ 
+ 

@@ -1,5 +1,4 @@
-package ex21_2_select_statement_method_list_map_alias;
-
+package ex21_4_3_statement_Search3_LIKE;
 /*
  DAO(Data Access Object) 클래스
  - 데이터 베이스와 연동하여 레코드의 추가, 수정, 삭제 작업이 이루어지는 클래스 입니다.
@@ -10,19 +9,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import ex21_3_select_statement_emp.Emp;
 
 public class DAO {
 
-	public List<Map<String, Object>> select() {
+	public ArrayList<Emp> search(int col_index, String search_word) {
+		 ArrayList<Emp> list = new ArrayList<Emp>();
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		String column_name[] = {"empno", "ename", "job", "mgr", "hiredate", "sal", "comm", "deptno"};
+		String sql = "select * from emp";
+		
+		if (col_index != 8) { //8은 종료를 의미
+			sql += " where ";
+			sql +=  column_name[col_index] + " like " + "'%" + search_word + "%'";
+		}
+		
+		System.out.println(sql.toString());
+		
 		try {
 			// 1단계 : JDBC 드라이버를 로드한다.
 			String driver = "oracle.jdbc.driver.OracleDriver";
@@ -32,22 +38,24 @@ public class DAO {
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(url, "scott", "tiger");
 
+			// Statement 객체 얻기
 			stmt = conn.createStatement();
 
-			String select_sql = "select deptno, count(*) cnt, max(sal) sal "
-								+ "from emp "
-								+ "group by deptno";
-
-			rs = stmt.executeQuery(select_sql);
-
+			rs = stmt.executeQuery(sql);
+			
 			while (rs.next()) { // 더 이상 읽을 데이터가 없을 때까지 반복
 
-				Map<String, Object> h = new HashMap<String, Object>();
-
-				h.put("sal", rs.getInt("sal"));
-				h.put("cnt", rs.getInt("cnt"));
-				h.put("deptno", rs.getInt("deptno"));
-				list.add(h);
+				Emp st = new Emp();
+				st.setEmpno(rs.getInt(1)); //조회 결과 첫번째 컬럼 값을 가져옵니다.
+											//SQL의 결과 null인 경우 0을 리턴
+				st.setEname(rs.getString(2));
+				st.setJob(rs.getString(3));
+				st.setMgr(rs.getInt(4));
+				st.setHiredate(rs.getDate(5));
+				st.setSal(rs.getInt(6));
+				st.setComm(rs.getInt(7));
+				st.setDeptno(rs.getInt(8));
+				list.add(st);
 			}
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
@@ -76,12 +84,5 @@ public class DAO {
 		return list;
 	}
 
-	public ArrayList<Emp> search(int i, String search_word) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	}
-
+}
 
