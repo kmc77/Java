@@ -2,8 +2,7 @@ package ex21_4_2_statement_Search;
 
 import java.util.Scanner;
 
-//emp의 모든 정보를 조회하는 클래스를 통해 가져온 데이터를 출력합니다.
-public class CRUD {
+public class CRUD2_input {
 	// CRUD:컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능
 	// C(Create-insert), R(Read-select)
 	// U(Update-update), D(Delete-delete)
