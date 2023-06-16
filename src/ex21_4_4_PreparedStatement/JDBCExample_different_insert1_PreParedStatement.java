@@ -56,7 +56,7 @@ public class JDBCExample_different_insert1_PreParedStatement {
 			for (int i = 0; i < 10000; i++) {
 				pstmt.setInt(1, i);
 				pstmt.setString(2, "홍길동");
-				result = pstmt.executeUpdate();
+				result = pstmt.executeUpdate(); 
 				count += result;
 			}
 
