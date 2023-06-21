@@ -117,7 +117,7 @@ public class Board {
 			for (int i = 0; i < BOARD_RE_LEV * 2; i++)
 				re += " ";
 
-			re += "re:";
+			re += "RE:";
 		}
 		
 		return String.format("%s\t%s\t\t%-16s\t%-16s\t%s\t%s\t%s\t%s",
